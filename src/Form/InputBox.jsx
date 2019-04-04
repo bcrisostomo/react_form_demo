@@ -11,8 +11,10 @@ const InputBoxContainer = styled.div`
 export const Label = styled.label`
   font-family: Sans-serif;
   font-size: 1em;
+  width: 10vw;
   background-color: orange;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
 `
 export const Input = styled.input`
   font-family: Sans-serif;

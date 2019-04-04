@@ -1,6 +1,16 @@
 import React, { useState } from 'react'
-
+import styled from 'styled-components'
 import InputBox from './InputBox'
+
+export const Button = styled.button`
+  font-family: Sans-serif;
+  font-size: 1em;
+  background-color: yellow;
+  color: red;
+  border-radius: 0.5em;
+  margin: 1em;
+  text-align: center;
+`
 
 export const SectionTwo = ({ listOfNames }) => (
   <React.Fragment>
@@ -44,12 +54,14 @@ const Form = () => {
         name="lastName"
         onChangeHandler={event => setLastName(event.target.value)}
       />
-      <button id="submit-btn" onClick={submitButtonHandler}>
-        Submit
-      </button>
-      <button id="toggle" onClick={() => toggleSectionTwo(!showSectionTwo)}>
-        Toggle Section 2
-      </button>
+      <div className="btn-container" style={{ textAlign: 'center' }}>
+        <Button id="submit-btn" onClick={submitButtonHandler}>
+          Submit
+        </Button>
+        <Button id="toggle" onClick={() => toggleSectionTwo(!showSectionTwo)}>
+          Toggle Section 2
+        </Button>
+      </div>
       {showSectionTwo && <SectionTwo listOfNames={listOfNames} />}
     </React.Fragment>
   )
